@@ -2,14 +2,12 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace magnetaktic;
+namespace MonoGameLibrary;
 
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-
-    private Texture2D tileSet;
 
     public Game1()
     {
@@ -28,7 +26,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        tileSet = Content.Load<Texture2D>("Tiles/tileset");
+
         // TODO: use this.Content to load your game content here
     }
 
