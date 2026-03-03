@@ -1,19 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using MonoGameLibrary;
 
 namespace magnetaktic;
 
-public class Game1 : Game
+public class Game1 : Core
 {
-    private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
     private Texture2D tileSet;
 
-    public Game1()
+    public Game1() : base("Magnetaktic", 1280, 720, false)
     {
-        _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
@@ -27,9 +26,8 @@ public class Game1 : Game
 
     protected override void LoadContent()
     {
-        _spriteBatch = new SpriteBatch(GraphicsDevice);
+        _spriteBatch = Core.SpriteBatch;
         tileSet = Content.Load<Texture2D>("Tiles/tileset");
-        // TODO: use this.Content to load your game content here
     }
 
     protected override void Update(GameTime gameTime)
